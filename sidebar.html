@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Sidebar</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="panel" id="panel-login">
+        <h1>Hej!</h1>
+        <p>Zaloguj się na swoje konto Twitch, aby zobaczyć listę kanałów.</p>
+        <button id="login-btn">Połącz z Twitch</button>
+    </div>
+
+    <div class="panel" id="panel-login-progress">
+        <h1>Logowanie...</h1>
+        <p>Nie zamykaj paska bocznego!</p>
+    </div>
+
+    <div class="panel" id="panel-error">
+        <h1>Wystąpił błąd</h1>
+        <p id="error-name"></p>
+        <p id="error-desc"></p>
+        <button id="start-again-btn">Zacznij od początku</button>
+    </div>
+
+    <div class="panel" id="panel-channels">
+        <div id="profile-box" class="box">
+            <img src="" />
+            <div>
+                <label></label>
+                <p></p>
+            </div>
+            <button id="logout-btn">Wyloguj</button>
+        </div>
+        <div id="channels-list">
+            
+        </div>
+    </div>
+
+    <script src="ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+@font-face {
+    font-family: "Roobert";
+    src: url("RoobertGX.woff2") format("woff2");
+}
+
+:root {
+    --bg: #0E0E10;
+    --bg2: #18181B;
+    --border: #35353B;
+    --fg: #EFEFF1;
+    --fg2: #ADADB8;
+    --accent: #9147FF;
+    --accent-hover: #772CE8;
+    --accent-active: #5C16C5;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    color: var(--fg);
+}
+
+body {
+    position: relative;
+    font-family: "Roobert", Arial, Helvetica, sans-serif;
+}
+
+.panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.panel:not(.visible) {
+    display: none !important;
+}
+
+button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 14px;
+    font-stretch: 100%;
+    background: var(--accent);
+    color: inherit;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--accent-hover);
+}
+
+button:active {
+    background: var(--accent-active);
+}
+
+h1 {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 3.6rem;
+    margin: 0;
+}
+
+p {
+    color: var(--fg2);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.box {
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background-color: var(--bg2);
+    padding: 16px;
+    margin-bottom: 10px;
+}
+
+#panel-login, #panel-login-progress, #panel-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#panel-channels {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+
+#panel-channels > #profile-box {
+    flex: 0 0 auto;
+}
+
+#panel-channel > #channels-list {
+    flex: 1 0 auto;
+    overflow-y: auto;
+}
+
+#panel-channel > #channels-list > .channel {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#profile-box {
+    display: flex;
+    flex-direction: row;
+}
+
+#profile-box > img {
+    --size: 48px;
+    flex: 0 0 var(--size);
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+}
+
+#profile-box > div {
+    flex: 1 1 auto;
+    margin: 0 10px;
+    height: 48px;
+}
+
+#profile-box > div > label {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#profile-box > div > p {
+    line-height: 24px;
+    margin: 0;
+    font-family: monospace;
+}
+
+#channels-list > .channel {
+    --pfp-size: 40px;
+    display: grid;
+    grid-template-columns: calc(var(--pfp-size) + 6px) auto auto;
+    grid-template-areas:
+        "pfp name watching"
+        "pfp topic watching";
+    margin-bottom: 10px;
+    border-radius: var(--pfp-size);
+    cursor: pointer;
+}
+
+#channels-list > .channel:hover {
+    background-color: #fff1;
+}
+
+#channels-list > .channel > * {
+    cursor: inherit;
+}
+
+#channels-list > .channel > img {
+    width: var(--pfp-size);
+    height: var(--pfp-size);
+    border-radius: var(--pfp-size);
+    grid-area: pfp;
+}
+
+#channels-list > .channel > .name {
+    grid-area: name;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(var(--pfp-size) / 2);
+}
+
+#channels-list > .channel > .topic {
+    grid-area: topic;
+    text-align: left;
+    line-height: calc(var(--pfp-size) / 2);
+    color: var(--fg2);
+}
+
+#channels-list > .channel > .watching {
+    grid-area: watching;
+    text-align: right;
+    line-height: var(--pfp-size);
+    color: #FF8280;
+    margin-right: 5px;
+}
+
+#channels-list > .channel > .watching::before {
+    color: inherit;
+    content: "◉ ";
+}

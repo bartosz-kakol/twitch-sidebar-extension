@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Twitch Sidebar",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "identity",
+        "https://id.twitch.tv/*"
+    ],
+  
+    "icons": {
+        "48": "icons/icon-48.png",
+        "96": "icons/icon-96.png"
+    },
+  
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "icons/icon-96.png",
+        "default_title": "Otwórz pasek Twitch"
+    },
+    "sidebar_action": {
+        "default_panel": "sidebar.html",
+        "default_icon": "icons/icon-96.png",
+        "default_title": "Twitch"
+    },
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "twitchsidebar@bartekk.pl"
+        }
+    }
+}
+  
